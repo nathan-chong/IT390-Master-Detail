@@ -1,0 +1,16 @@
+<h2>My Muscles</h2>
+
+<div *ngIf="selectedMuscle">
+    <h2>{{ selectedMuscle.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ selectedMuscle.id }}</div>
+</div>
+
+<ul class="muscles">
+    <li 
+        [class.selected]="muscle === selectedMuscle" 
+        *ngFor="let muscle of muscles" 
+        (click)="onSelect(muscle)"
+    >
+        <span class="badge">{{muscle.id}}</span> {{muscle.name}}
+    </li>
+</ul>
